@@ -1,0 +1,243 @@
+<!--public/index.html  -->
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shielt Milsim Cartagena</title>
+    <link href="css/output.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+        }
+
+        .radar-sweep {
+            background: conic-gradient(from 0deg, rgba(0, 255, 65, 0.2) 0deg, transparent 90deg);
+            animation: sweep 4s linear infinite;
+        }
+
+        @keyframes sweep {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 65, 0.05) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="font-body">
+
+    <!-- NAVBAR -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-green-900/30 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+        <div class="flex items-center">
+            <img src="assets/imagenes/logo.png" style="height: 60px;"
+                class="w-auto object-contain drop-shadow-[0_0_8px_rgba(0,255,65,0.4)]" alt="SHIELT LOGO" />
+        </div>
+
+        <div class="hidden md:flex gap-6">
+            <a href="index.html"
+                class="text-primary border-b-2 border-primary pb-1 text-xs font-bold uppercase tracking-widest">BASE</a>
+            <a href="calendario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">CALENDARIO</a>
+            <a href="archivo.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">OPERACIONES</a>
+            <a href="inventario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">INVENTARIO</a>
+            <a href="reclutamiento.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">RECLUTAMIENTO</a>
+        </div>
+        <div class="text-primary text-xs font-bold uppercase tracking-widest">10°20'45.8"N, 75°26'05.1"W</div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- HERO SECTION -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <video class="absolute inset-0 w-full h-full object-cover opacity-30" src="assets/imagenes/shielt.mp4"
+                autoplay muted loop playsinline>
+            </video>
+
+            <div class="absolute inset-0 scanline"></div>
+            <div class="relative z-10 text-center px-4">
+                <div class="mb-4 flex items-center justify-center gap-3">
+                    <span class="h-px w-12 bg-primary"></span>
+                    <span class="text-[10px] tracking-[0.3em] text-primary uppercase">ESTADO: ACTIVO</span>
+                    <span class="h-px w-12 bg-primary"></span>
+                </div>
+                <h1
+                    class="font-headline text-6xl md:text-8xl font-black text-primary drop-shadow-[0_0_25px_rgba(0,255,65,0.6)] tracking-tighter mb-4">
+                    SHIELT MILSIM CARTAGENA</h1>
+                <p class="font-headline text-xl md:text-2xl text-white/60 tracking-[0.3em] uppercase italic mb-8">Si
+                    avanzo sígueme...</p>
+                <div
+                    class="inline-flex items-center gap-4 bg-surface/80 border border-outline/30 px-6 py-3 backdrop-blur-md">
+                    <span class="material-symbols-outlined text-primary">location_on</span>
+                    <span class="text-xs tracking-widest">BASE CARTAGENA | 10°20'45.8"N, 75°26'05.1"W</span>
+                </div>
+            </div>
+            <!-- RADAR HUD -->
+            <div class="absolute bottom-12 right-12 w-32 h-32 md:w-48 md:h-48 hidden lg:block">
+                <div class="absolute inset-0 border border-primary/20 rounded-full"></div>
+                <div class="absolute inset-4 border border-primary/20 rounded-full"></div>
+                <div class="absolute inset-8 border border-primary/20 rounded-full"></div>
+                <div class="absolute inset-0 radar-sweep rounded-full"></div>
+                <div
+                    class="absolute top-1/2 left-1/2 w-2 h-2 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2">
+                </div>
+            </div>
+        </section>
+
+        <!-- MISIÓN Y PROPÓSITO -->
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="max-w-3xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="text-[10px] text-primary tracking-widest">OP-01 // INTEL</span>
+                        <div class="h-px flex-1 bg-outline/30"></div>
+                    </div>
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight mb-6">NUESTRA MISIÓN</h2>
+                    <p
+                        class="text-white/70 text-lg leading-relaxed text-justify [text-align:justify] [text-justify:inter-word] [hyphens:auto]">
+                        Ser un club deportivo profesional de Paintball Milsim, simulando una confrontación armada
+                        realista con técnicas y estrategias, llevando nuestra
+                        razón de ser a un reconocimiento nacional e internacional, fomentando y promoviendo un estilo de
+                        vida sano, con fortalecimiento social, guiados bajo principios y valores, basados en una promesa
+                        y ley, demostrando que las armas solo deben ser usadas para la recreación y el sano
+                        esparcimiento. Vinculando así a jóvenes y adultos mayores de edad, sin distinción de raza, credo
+                        o pensamiento.</p>
+                </div>
+                <div class="bg-surface-light/60 backdrop-blur-xl p-8 border border-outline/20 relative">
+                    <div class="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-primary"></div>
+                    <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-primary"></div>
+                    <p class="font-headline text-xl text-primary leading-tight">"En el fragor del combate simulado,
+                        encontramos la verdadera claridad. No entrenamos para ser mejores que otros, sino para ser
+                        mejores de lo que fuimos ayer."</p>
+                    <div class="mt-6 flex justify-between">
+                        <span class="text-[10px] text-white/40 uppercase">Command Directive 01-A</span>
+                        <span class="material-symbols-outlined text-primary/20">Shielt</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRINCIPIOS -->
+        <section class="py-20 bg-surface-light/30 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-headline text-3xl font-black text-center uppercase mb-12">PRINCIPIOS FUNDAMENTALES</h2>
+                <div class="grid md:grid-cols-3 gap-0 border border-outline/30">
+                    <div
+                        class="p-10 border-b md:border-b-0 md:border-r border-outline/30 hover:bg-surface/50 transition">
+                        <span class="text-[10px] text-primary mb-4 block">PRINCIPLE_01</span>
+                        <h3 class="font-headline text-4xl font-bold mb-4 text-primary">DIOS</h3>
+                        <p class="text-white/60">Adhesión a principios espirituales. Nuestra brújula moral y fortaleza
+                            espiritual.</p>
+                    </div>
+                    <div
+                        class="p-10 border-b md:border-b-0 md:border-r border-outline/30 hover:bg-surface/50 transition">
+                        <span class="text-[10px] text-primary mb-4 block">PRINCIPLE_02</span>
+                        <h3 class="font-headline text-4xl font-bold mb-4 text-primary">PATRIA</h3>
+                        <p class="text-white/60">Relación con la sociedad, promoción de paz, entendimiento y
+                            cooperación.</p>
+                    </div>
+                    <div class="p-10 hover:bg-surface/50 transition">
+                        <span class="text-[10px] text-primary mb-4 block">PRINCIPLE_03</span>
+                        <h3 class="font-headline text-4xl font-bold mb-4 text-primary">HOGAR</h3>
+                        <p class="text-white/60">Desarrollo pleno de potenciales personales. La hermandad que formamos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MÉTODO SHIELT -->
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-[10px] text-primary tracking-widest uppercase">Metodología de Entrenamiento</span>
+                    <h2 class="font-headline text-5xl font-black mt-2">MÉTODO SHIELT</h2>
+                </div>
+                <span class="text-[10px] text-white/40 text-right">Protocolos V.4.2</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="bg-surface-lighter p-6 border border-outline/20 hover:border-primary/50 transition">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">gavel</span>
+                    <h4 class="font-bold text-sm uppercase">Promesa / Ley</h4>
+                    <p class="text-[10px] text-white/50 mt-2">Código de conducta inquebrantable</p>
+                </div>
+                <div class="bg-surface-lighter p-6 border border-outline/20 hover:border-primary/50 transition">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">fitness_center</span>
+                    <h4 class="font-bold text-sm uppercase">Aprender Haciendo</h4>
+                    <p class="text-[10px] text-white/50 mt-2">Educación activa</p>
+                </div>
+                <div class="bg-surface-lighter p-6 border border-outline/20 hover:border-primary/50 transition">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">groups</span>
+                    <h4 class="font-bold text-sm uppercase">Sistema de Escuadras</h4>
+                    <p class="text-[10px] text-white/50 mt-2">Socialización y habilidades</p>
+                </div>
+                <div class="bg-surface-lighter p-6 border border-outline/20 hover:border-primary/50 transition">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">bolt</span>
+                    <h4 class="font-bold text-sm uppercase">Estimulación</h4>
+                    <p class="text-[10px] text-white/50 mt-2">Especialidades y ascensos</p>
+                </div>
+                <div class="bg-primary p-6 border border-primary">
+                    <span class="material-symbols-outlined text-surface text-3xl mb-4">trending_up</span>
+                    <h4 class="font-bold text-sm uppercase text-surface">Progresión PAP</h4>
+                    <p class="text-[10px] text-surface/80 mt-2">Plan de Ascenso Personal</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="py-20 text-center bg-surface-light/50">
+            <h3 class="font-headline text-3xl md:text-5xl font-black mb-8">¿LISTO PARA EL DESPLIEGUE?</h3>
+            <a href="reclutamiento.html"
+                class="inline-block bg-primary text-surface font-headline font-black px-12 py-5 tracking-[0.2em] uppercase text-sm hover:brightness-110 transition shadow-[0_0_30px_rgba(0,255,65,0.2)]">INICIAR
+                RECLUTAMIENTO</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-outline/30 py-8 bg-surface/80 px-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="text-lg font-bold text-primary font-headline">SHIELT MILSIM CARTAGENA</div>
+        <div class="flex gap-8 my-4 md:my-0">
+            <span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">Si avanzo sígueme...</span>
+            <span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">¡Au au au!</span>
+        </div>
+        <div class="text-[10px] text-primary/40">S.H.I.E.L.T. // 2026</div>
+    </footer>
+
+    <!-- CORNER BRACKETS -->
+    <div class="fixed top-6 left-6 w-6 h-6 border-t-2 border-l-2 border-primary/30 pointer-events-none hidden xl:block">
+    </div>
+    <div
+        class="fixed top-6 right-6 w-6 h-6 border-t-2 border-r-2 border-primary/30 pointer-events-none hidden xl:block">
+    </div>
+    <div
+        class="fixed bottom-6 left-6 w-6 h-6 border-b-2 border-l-2 border-primary/30 pointer-events-none hidden xl:block">
+    </div>
+    <div
+        class="fixed bottom-6 right-6 w-6 h-6 border-b-2 border-r-2 border-primary/30 pointer-events-none hidden xl:block">
+    </div>
+
+</body>
+
+</html>

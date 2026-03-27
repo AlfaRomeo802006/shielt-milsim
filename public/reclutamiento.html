@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shielt Milsim Cartagena</title>
+
+    <link href="css/output.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+            background-image: radial-gradient(#3b4b37 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+
+<body class="font-body">
+
+    <!-- NAVBAR -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-green-900/30 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+        <div class="flex items-center">
+            <img src="assets/imagenes/logo.png" style="height: 60px;"
+                class="w-auto object-contain drop-shadow-[0_0_8px_rgba(0,255,65,0.4)]" alt="SHIELT LOGO" />
+        </div>
+        <div class="hidden md:flex gap-6">
+            <a href="index.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">BASE</a>
+            <a href="calendario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">CALENDARIO</a>
+            <a href="archivo.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">OPERACIONES</a>
+            <a href="inventario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">INVENTARIO</a>
+            <a href="reclutamiento.html"
+                class="text-primary border-b-2 border-primary pb-1 text-xs font-bold uppercase tracking-widest">RECLUTAMIENTO</a>
+        </div>
+        <div class="text-primary text-xs font-bold uppercase tracking-widest">10°20'45.8"N, 75°26'05.1"W</div>
+    </nav>
+
+    <main class="pt-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-12 gap-8">
+        <!-- SIDEBAR LEY SHIELT -->
+        <aside class="lg:col-span-4 space-y-6">
+            <div class="bg-surface-light border border-outline/30 p-6">
+                <h3 class="font-headline text-primary text-lg font-bold uppercase mb-6 border-b border-primary/20 pb-2">
+                    LEY SHIELT</h3>
+                <ul class="space-y-3 text-sm text-white/70">
+                    <li class="flex gap-3"><span class="text-primary font-bold">01</span> El Operador Shielt es Honrado
+                        y
+                        Justo.</li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">02</span> Es amigo de todos y hermano de
+                        todos.</li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">03</span> El Operador Shielt es leal.
+                    </li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">04</span> El Operador Shielt es puntual.
+                    </li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">05</span> Obediente sin réplicas y no
+                        hace nada a medias.</li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">06</span> Es limpio y ordenado.</li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">07</span> Cuida y respeta la naturaleza.
+                    </li>
+                    <li class="flex gap-3"><span class="text-primary font-bold">08</span> Sonríe ante sus dificultades.
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-surface-light border border-outline/30 p-6 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10">
+                    <div class="w-full h-full"
+                        style="background-image: radial-gradient(circle at 2px 2px, #00ff41 1px, transparent 0); background-size: 20px 20px;">
+                    </div>
+                </div>
+                <div class="relative"><span class="text-[10px] text-primary">COORDENADAS</span>
+                    <h4 class="font-headline text-xl font-bold">10°20'45.8"N 75°26'05.1"W</h4>
+                    <p class="text-xs text-white/50 mt-2">Base de Operaciones</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- FORMULARIO -->
+        <section class="lg:col-span-8">
+            <div class="bg-surface-light/60 backdrop-blur-xl p-8 border border-outline/20 relative">
+                <div class="absolute -top-1 -left-1 w-12 h-1 bg-primary"></div>
+                <div class="absolute -top-1 -left-1 w-1 h-12 bg-primary"></div>
+                <form class="grid md:grid-cols-2 gap-6">
+
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">CALLSIGN / NOMBRE CLAVE</label>
+                        <input class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            placeholder="GHOST-01" type="text" />
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">NOMBRE COMPLETO</label>
+                        <input class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            placeholder="J. DOE" type="text" />
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">TIPO DE DOCUMENTO</label>
+                        <select class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1">
+                            <option>CÉDULA DE CIUDADANÍA</option>
+                            <option>TARJETA DE IDENTIDAD</option>
+                            <option>CÉDULA DE EXTRANJERÍA</option>
+                            <option>PASAPORTE</option>
+                        </select>
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">NÚMERO DE IDENTIFICACIÓN</label>
+                        <input class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            placeholder="1234567890" type="number" />
+                    </div>
+
+                    <!-- NUEVO -->
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">TELÉFONO</label>
+                        <input class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            placeholder="3001234567" type="tel" />
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">FECHA DE NACIMIENTO</label>
+                        <input class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            type="date" />
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] text-primary uppercase">ESPECIALIDAD TÁCTICA</label>
+                        <select class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1">
+                            <option>OPERADOR ESTANDAR</option>
+                            <option>RECONOCIMIENTO</option>
+                            <option>SNIPER</option>
+                            <option>ARTILLERO</option>
+                            <option>MÉDICO DE COMBATE</option>
+                            <option>INGENIERÍA</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="text-[10px] text-primary uppercase">MOTIVACIÓN DE INGRESO</label>
+                        <textarea rows="4"
+                            class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            placeholder="DESCRIBA SU EXPERIENCIA Y OBJETIVOS..."></textarea>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="text-[10px] text-primary uppercase">¿CÓMO NOS CONOCIÓ?</label>
+                        <input class="w-full bg-surface border border-outline/50 focus:border-primary p-3 mt-1"
+                            placeholder="RRSS / RECOMENDACIÓN / OTROS" type="text" />
+                    </div>
+
+                    <div class="md:col-span-2 border-t border-outline/20 pt-6 space-y-4">
+                        <div class="flex gap-4 p-4 bg-surface/50 border-l-4 border-primary">
+                            <input type="checkbox" class="mt-1" />
+                            <div>
+                                <label class="font-bold uppercase text-sm">ACEPTO LA PROMESA SHIELT</label>
+                                <p class="text-xs text-white/50">
+                                    "Por mi honor prometo cumplir mis deberes para con Dios y la Patria, ayudar al
+                                    prójimo y cumplir fielmente la ley Shielt."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 p-4">
+                            <input type="checkbox" class="mt-1" />
+                            <div>
+                                <label class="font-bold uppercase text-sm">ACEPTO EL REGLAMENTO OPERATIVO</label>
+                                <p class="text-xs text-white/50">
+                                    Certifico que soy mayor de 18 años y participaré bajo mi propio riesgo cumpliendo
+                                    las medidas de seguridad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <button type="button"
+                            class="w-full bg-primary text-surface py-5 font-black uppercase tracking-[0.2em] text-sm hover:brightness-110 transition flex justify-between items-center px-8">
+                            <span>TRANSMITIR SOLICITUD</span>
+                            <span class="material-symbols-outlined">sensors</span>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div id="terminal"
+                class="mt-6 p-4 bg-surface/50 border border-outline/20 font-mono text-[10px] text-primary/60">
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-outline/30 py-8 bg-surface/80 px-6 flex flex-col md:flex-row justify-between items-center mt-12">
+        <div class="text-lg font-bold text-primary font-headline">SHIELT MILSIM CARTAGENA</div>
+        <div class="flex gap-8 my-4 md:my-0"><span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">Si
+                avanzo sígueme...</span><span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">¡Au au
+                au!</span></div>
+        <div class="text-[10px] text-primary/40">S.H.I.E.L.T. // 2026</div>
+    </footer>
+
+
+    <script>
+        const lines = [
+            "> SYSTEM: WAITING FOR USER INPUT...",
+            "> GEO_LOC: 10.3910 N / 75.4794 W CHECKED",
+            "> ENCRYPTION LAYER: ACTIVE"
+        ];
+
+        const terminal = document.getElementById("terminal");
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeLine() {
+            if (lineIndex >= lines.length) {
+                // Espera y luego reinicia
+                setTimeout(resetTerminal, 2000);
+                return;
+            }
+
+            if (charIndex === 0) {
+                const p = document.createElement("p");
+                terminal.appendChild(p);
+            }
+
+            const currentLine = terminal.children[lineIndex];
+            currentLine.textContent += lines[lineIndex][charIndex];
+
+            charIndex++;
+
+            if (charIndex < lines[lineIndex].length) {
+                setTimeout(typeLine, 25);
+            } else {
+                charIndex = 0;
+                lineIndex++;
+                setTimeout(typeLine, 400);
+            }
+        }
+
+        function resetTerminal() {
+            terminal.innerHTML = "";
+            lineIndex = 0;
+            charIndex = 0;
+            setTimeout(typeLine, 500);
+        }
+
+        typeLine();
+    </script>
+
+
+
+</body>
+
+</html>

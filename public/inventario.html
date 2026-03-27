@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shielt Milsim Cartagena</title>
+    <link href="css/output.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+            background-image: radial-gradient(#3b4b37 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+
+        .glass-card {
+            background: rgba(26, 28, 32, 0.7);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="font-body">
+
+    <!-- NAVBAR -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-green-900/30 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+        <div class="flex items-center">
+            <img src="assets/imagenes/logo.png" style="height: 60px;"
+                class="w-auto object-contain drop-shadow-[0_0_8px_rgba(0,255,65,0.4)]" alt="SHIELT LOGO" />
+        </div>
+        <div class="hidden md:flex gap-6">
+            <a href="index.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">BASE</a>
+            <a href="calendario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">CALENDARIO</a>
+            <a href="archivo.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">OPERACIONES</a>
+            <a href="inventario.html"
+                class="text-primary border-b-2 border-primary pb-1 text-xs font-bold uppercase tracking-widest">INVENTARIO</a>
+            <a href="reclutamiento.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">RECLUTAMIENTO</a>
+        </div>
+        <div class="text-primary text-xs font-bold uppercase tracking-widest">10°20'45.8"N, 75°26'05.1"W</div>
+    </nav>
+
+    <main class="pt-24 px-6 max-w-7xl mx-auto">
+        <!-- HEADER -->
+        <div class="border-l-4 border-primary pl-6 mb-12">
+            <span class="text-[10px] text-primary tracking-[0.3em] uppercase">EQUIPAMIENTO DE GRADO MILITAR</span>
+            <h1 class="font-headline text-5xl md:text-6xl font-black tracking-tighter">INVENTARIO <span
+                    class="text-primary">TÁCTICO</span></h1>
+        </div>
+
+        <!-- REGLAS CRONÓGRAFO -->
+        <div class="grid md:grid-cols-3 gap-4 mb-12">
+            <div class="glass-card p-6 border border-outline/30">
+                <div class="flex items-center gap-3 mb-4"><span
+                        class="material-symbols-outlined text-primary">warning</span>
+                    <h3 class="font-bold text-sm uppercase">REGLAS CRONÓGRAFO</h3>
+                </div>
+                <div class="flex justify-between py-2 border-b border-outline/20"><span class="text-xs">SNIPER
+                        (BOLT)</span><span class="text-primary font-bold">600 FPS MAX</span></div>
+                <div class="flex justify-between py-2"><span class="text-xs">DMR / SUPPORT</span><span
+                        class="text-primary font-bold">450 FPS MAX</span></div>
+                <p class="text-[10px] text-red-400 mt-4">* Toda marcadora debe pasar prueba de cronógrafo antes del
+                    despliegue.</p>
+            </div>
+            <div class="md:col-span-2 glass-card p-6 border-l-2 border-primary">
+                <div class="flex gap-4"><span class="material-symbols-outlined text-primary text-3xl">security</span>
+                    <div>
+                        <h3 class="font-bold text-lg uppercase">PROTOCOLO DE SEGURIDAD</h3>
+                        <p class="text-xs text-white/60">Prohibido el uso de armas letales. Protección ocular ANSI Z87.1
+                            obligatoria en zona de despliegue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARDS EQUIPAMIENTO -->
+        <div class="grid md:grid-cols-12 gap-6">
+            <div class="md:col-span-8 glass-card border border-outline/30 overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 h-64 md:h-auto flex items-center justify-center bg-black">
+                        <img src="assets/imagenes/uniforme.jpeg" class="max-h-full max-w-full object-contain">
+                    </div>
+
+                    <div class="p-6 md:w-1/2">
+                        <span class="text-[10px] text-primary">UNIFORME REGLAMENTARIO</span>
+                        <h2 class="font-headline text-2xl font-bold mt-2 mb-4">DIGITAL WOODLAND MARPAT</h2>
+                        <ul class="space-y-2 text-sm">
+                            <li>✓ Pantalón Digital Woodland Marpat</li>
+                            <li>✓ Camiseta verde (operadores) / arena (comandantes)</li>
+                            <li>✓ Botas color arena</li>
+                            <li>✓ Shemag arena, guantes negros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-4 glass-card p-6 border border-outline/30">
+                <span class="text-[10px] text-primary">MARCADORAS</span>
+                <h2 class="font-headline text-2xl font-bold mt-2 mb-4">RÉPLICAS TÁCTICAS</h2>
+                <div class="space-y-3">
+                    <div class="p-3 bg-surface/50"><span class="font-bold text-xs">ASSAULT</span>
+                        <p class="text-[10px] text-white/60">Semiautomática / 250 paintballs</p>
+                    </div>
+                    <div class="p-3 bg-surface/50"><span class="font-bold text-xs">SNIPER</span>
+                        <p class="text-[10px] text-white/60">Bolt action / First Strike / 600 FPS</p>
+                    </div>
+                    <div class="p-3 bg-surface/50"><span class="font-bold text-xs">ARTILLERO</span>
+                        <p class="text-[10px] text-white/60">Tambor / 1000 paintballs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-4 glass-card p-6 border border-outline/30"><span
+                    class="material-symbols-outlined text-primary text-2xl">shield</span>
+                <h3 class="font-bold text-xl mt-2">PROTECCIÓN</h3>
+                <p class="text-sm mt-2">Gafas ANSI Z87.1 · Casco FAST · Chaleco táctico · Guantes · Rodilleras</p>
+            </div>
+            <div class="md:col-span-4 glass-card p-6 border border-outline/30"><span
+                    class="material-symbols-outlined text-primary text-2xl">settings_input_antenna</span>
+                <h3 class="font-bold text-xl mt-2">COMUNICACIONES</h3>
+                <p class="text-sm mt-2">Baofeng UV-82 · PTT Kenwood · Headset COMTAC</p>
+            </div>
+            <div class="md:col-span-4 glass-card p-6 border border-outline/30"><span
+                    class="material-symbols-outlined text-primary text-2xl">grid_view</span>
+                <h3 class="font-bold text-xl mt-2">ACCESORIOS</h3>
+                <p class="text-sm mt-2">Miras holográficas · Láser PEQ-15 · Bipode · Botiquín IFAK</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-outline/30 py-8 bg-surface/80 px-6 flex flex-col md:flex-row justify-between items-center mt-12">
+        <div class="text-lg font-bold text-primary font-headline">SHIELT MISLIM CARTAGENA</div>
+        <div class="flex gap-8 my-4 md:my-0"><span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">Si
+                avanzo sígueme...</span><span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">¡Au au
+                au!</span></div>
+        <div class="text-[10px] text-primary/40">S.H.I.E.L.T. // 2024</div>
+    </footer>
+
+</body>
+
+</html>
