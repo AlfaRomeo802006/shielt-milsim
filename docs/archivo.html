@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shielt Milsim Cartagena</title>
+    <link href="css/output.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+        }
+
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 65, 0.03) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+
+
+
+        .cursor {
+            display: inline-block;
+            width: 6px;
+            background: #00ff88;
+            margin-left: 2px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body">
+
+    <!-- NAVBAR -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-green-900/30 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+        <div class="flex items-center">
+            <img src="assets/imagenes/logo.png" style="height: 60px;"
+                class="w-auto object-contain drop-shadow-[0_0_8px_rgba(0,255,65,0.4)]" alt="SHIELT LOGO" />
+        </div>
+        <div class="hidden md:flex gap-6">
+            <a href="index.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">BASE</a>
+            <a href="calendario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">CALENDARIO</a>
+            <a href="archivo.html"
+                class="text-primary border-b-2 border-primary pb-1 text-xs font-bold uppercase tracking-widest">OPERACIONES</a>
+            <a href="inventario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">INVENTARIO</a>
+            <a href="reclutamiento.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">RECLUTAMIENTO</a>
+        </div>
+        <div class="text-primary text-xs font-bold uppercase tracking-widest">10°20'45.8"N, 75°26'05.1"W</div>
+    </nav>
+
+    <main class="pt-24 px-6 max-w-7xl mx-auto">
+        <!-- HEADER -->
+        <div class="border-l-4 border-primary pl-6 mb-12">
+            <span class="text-[10px] text-primary tracking-[0.3em] uppercase">Intel Database Access</span>
+            <h1 class="font-headline text-5xl md:text-6xl font-black tracking-tighter">ARCHIVO DE <span
+                    class="text-primary">OPERACIONES</span></h1>
+        </div>
+
+        <!-- CARROUSEL TERMINAL -->
+        <div class="relative h-[500px] overflow-hidden mb-12 group">
+
+            <!-- scanline -->
+            <div class="absolute inset-0 scanline z-10 pointer-events-none"></div>
+
+            <!-- IMAGEN CENTRADA -->
+            <div class="absolute inset-0 flex items-center justify-center px-4">
+                <img src="assets/imagenes/gato-negro.jpeg"
+                    class="max-w-full w-auto h-auto object-contain brightness-50 contrast-125 saturate-75 transition duration-700 group-hover:scale-105"
+                    alt="Operación Táctica" />
+            </div>
+
+
+            <!-- overlay oscuro (mejora contraste del texto) -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+
+            <!-- marco táctico -->
+            <div class="absolute inset-0 border-[20px] border-surface/80 pointer-events-none"></div>
+
+            <!-- HUD -->
+            <div class="absolute top-8 left-8 bg-surface/60 backdrop-blur-md p-4 border border-primary/30 shadow-lg">
+                <div id="terminal" class="text-[10px] text-primary font-mono space-y-1"></div>
+            </div>
+
+
+            <!-- CONTENIDO -->
+            <div class="absolute bottom-12 left-12 max-w-xl z-20">
+                <div class="bg-primary text-surface px-3 py-1 text-[10px] inline-block mb-4 font-bold tracking-widest">
+                    LIVE FEED
+                </div>
+
+                <h2 class="font-headline text-5xl font-black text-white mb-4 leading-tight">
+                    OPERACIÓN <span class="text-primary">GATO NEGRO</span>
+                </h2>
+
+                <p class="text-white/70 mb-6 text-sm leading-relaxed">
+                    La mayor maniobra defensiva realizada por SHIELT.
+                    Despliegue de 14 operadores para asegurar el perímetro y neutralizar amenazas.
+                </p>
+
+                <button class="bg-primary text-surface px-8 py-3 font-bold uppercase text-sm 
+           hover:brightness-110 transition tracking-wider shadow-lg">
+                    ACCEDER AL INFORME
+                </button>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- GALERÍA DE MISIONES -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-surface-light border border-outline/30 overflow-hidden group">
+                <div class="h-48 overflow-hidden"><img
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition"
+                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format"
+                        alt="Misión" /></div>
+                <div class="p-5">
+                    <div class="flex justify-between text-[10px] text-primary mb-2"><span>BARRANQUILLA</span><span>ABR
+                            2025</span></div>
+                    <h3 class="font-bold text-xl uppercase">OPERACIÓN FENIX</h3>
+                    <div class="flex justify-between mt-4 pt-4 border-t border-outline/20 text-xs"><span>8
+                            Operadores</span><span class="text-primary">REGIONAL</span></div>
+                </div>
+            </div>
+            <div class="bg-surface-light border border-outline/30 overflow-hidden group">
+
+                <div class="h-48 overflow-hidden">
+                    <img style="object-position: center 10%;"
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition"
+                        src="assets/imagenes/fenix2.jpeg" alt="Misión" />
+                </div>
+
+
+
+                <div class="p-5">
+                    <div class="flex justify-between text-[10px] text-primary mb-2">
+                        <span>BARRANQUILLA</span><span>ABR 2025</span>
+                    </div>
+                    <h3 class="font-bold text-xl uppercase">OPERACIÓN FENIX</h3>
+                    <div class="flex justify-between mt-4 pt-4 border-t border-outline/20 text-xs">
+                        <span>8 Operadores</span><span class="text-primary">REGIONAL</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-surface-light border border-outline/30 overflow-hidden group">
+                <div class="h-48 flex items-center justify-center overflow-hidden">
+                    <img style="margin-top: 70px;"
+                        class="w-[120px] h-auto object-contain grayscale group-hover:grayscale-0 transition"
+                        src="assets/imagenes/boyaca.jpeg" alt="Misión" />
+
+                </div>
+                <div class="p-5">
+                    <div class="flex justify-between text-[10px] text-primary mb-2"><span>SAN PABLO DE BORBUR -
+                            BOYACA</span><span>AGO
+                            2025</span></div>
+                    <h3 class="font-bold text-xl uppercase">ASALTO AL PARAISO</h3>
+                    <div class="flex justify-between mt-4 pt-4 border-t border-outline/20 text-xs"><span>4
+                            Operadores</span><span class="text-primary">NACIONAL</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-outline/30 py-8 bg-surface/80 px-6 flex flex-col md:flex-row justify-between items-center mt-12">
+        <div class="text-lg font-bold text-primary font-headline">SHIELT MILSIM CARTAGENA</div>
+        <div class="flex gap-8 my-4 md:my-0">
+            <span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">Si avanzo sígueme...</span>
+            <span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">¡Au au au!</span>
+        </div>
+        <div class="text-[10px] text-primary/40">S.H.I.E.L.T. // 2026</div>
+    </footer>
+
+
+    <script>
+        const lines = [
+            "> ANALYZING_BIOMETRIC_DATA...",
+            "> LOADING_SATELLITE_FEED...",
+            "> ESTABLISHING_SECURE_LINK...",
+            "> ACCESS_GRANTED"
+        ];
+
+        const terminal = document.getElementById("terminal");
+
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        function typeLine() {
+            if (lineIndex >= lines.length) {
+                // Espera y reinicia
+                setTimeout(() => {
+                    terminal.innerHTML = "";
+                    lineIndex = 0;
+                    charIndex = 0;
+                    typeLine();
+                }, 3000);
+                return;
+            }
+
+            if (!terminal.children[lineIndex]) {
+                const div = document.createElement("div");
+                terminal.appendChild(div);
+            }
+
+            const currentLine = terminal.children[lineIndex];
+            const text = lines[lineIndex];
+
+            if (charIndex < text.length) {
+                currentLine.innerHTML = text.substring(0, charIndex + 1) + '<span class="cursor"></span>';
+                charIndex++;
+                setTimeout(typeLine, 30); // velocidad de escritura
+            } else {
+                currentLine.innerHTML = text + " OK";
+                lineIndex++;
+                charIndex = 0;
+                setTimeout(typeLine, 500); // pausa entre líneas
+            }
+        }
+
+        typeLine();
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shielt Milsim Cartagena</title>
+    <link href="css/output.css" rel="stylesheet">
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #111318;
+            color: #e2e2e8;
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* Estilo para días festivos */
+        .dia-festivo {
+            background-color: rgba(255, 100, 100, 0.15);
+            border-left: 2px solid #ff6464;
+        }
+
+        .dia-festivo .numero-dia {
+            color: #ff8888;
+        }
+
+
+
+        /*efecto humo*/
+        .smoke {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(200, 200, 200, 0.25) 0%, transparent 60%);
+            animation: smokeMove 8s linear infinite;
+            filter: blur(30px);
+        }
+
+        .smoke2 {
+            animation-duration: 12s;
+            opacity: 0.5;
+        }
+
+        .smoke3 {
+            animation-duration: 16s;
+            opacity: 0.4;
+        }
+
+        @keyframes smokeMove {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(120px, -150px) scale(1.3);
+            }
+
+            100% {
+                transform: translate(-120px, -250px) scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body">
+
+    <!-- NAVBAR -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-green-900/30 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 py-4">
+        <div class="flex items-center">
+            <img src="assets/imagenes/logo.png" style="height: 60px;"
+                class="w-auto object-contain drop-shadow-[0_0_8px_rgba(0,255,65,0.4)]" alt="SHIELT LOGO" />
+        </div>
+        <div class="hidden md:flex gap-6">
+            <a href="index.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">BASE</a>
+            <a href="calendario.html"
+                class="text-primary border-b-2 border-primary pb-1 text-xs font-bold uppercase tracking-widest">CALENDARIO</a>
+            <a href="archivo.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">OPERACIONES</a>
+            <a href="inventario.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">INVENTARIO</a>
+            <a href="reclutamiento.html"
+                class="text-white/60 hover:text-primary transition text-xs font-bold uppercase tracking-widest">RECLUTAMIENTO</a>
+        </div>
+        <div class="text-primary text-xs font-bold uppercase tracking-widest">10°20'45.8"N, 75°26'05.1"W</div>
+    </nav>
+
+    <!-- PARALLAX HERO -->
+    <div class="relative h-80 mt-16 overflow-hidden">
+        <div
+            class="absolute inset-0 parallax-bg bg-[url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2074&auto=format')] bg-cover bg-center opacity-40">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent"></div>
+        <div class="relative h-full flex items-end px-8 pb-12 max-w-7xl mx-auto">
+            <div>
+                <span class="text-[10px] text-primary tracking-[0.3em] uppercase">OPERATIONAL TIMELINE</span>
+                <h1 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter">CALENDARIO DE <span
+                        class="text-primary">OPERACIONES</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- HUMO -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="smoke"></div>
+        <div class="smoke smoke2"></div>
+        <div class="smoke smoke3"></div>
+    </div>
+
+
+    <main class="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-12 gap-8">
+        <!-- CALENDARIO -->
+        <div class="lg:col-span-8">
+            <div class="bg-surface-light/50 border border-outline/30 p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex gap-4">
+                        <button class="p-2 border border-outline/50 hover:bg-primary/10 transition"
+                            id="prevMonth">&lt;</button>
+                        <span class="font-headline text-2xl font-bold" id="currentMonthYear">MARZO 2026</span>
+                        <button class="p-2 border border-outline/50 hover:bg-primary/10 transition"
+                            id="nextMonth">&gt;</button>
+                    </div>
+                    <div class="flex gap-3 text-[10px]">
+                        <span class="flex items-center gap-1">
+                            <div class="w-2 h-2 bg-primary"></div>ENTRENAMIENTO
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <div class="w-2 h-2 bg-blue-500"></div>ENFRENTAMIENTO
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <div class="w-2 h-2 bg-amber-500"></div>ASCENSOS
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <div class="w-2 h-2 bg-red-500"></div>FESTIVO
+                        </span>
+                    </div>
+                </div>
+                <!-- DÍAS DE LA SEMANA -->
+                <div class="grid grid-cols-7 text-center border-b border-outline/20 py-3">
+                    <span class="text-[10px] uppercase text-white/40">LUN</span>
+                    <span class="text-[10px] uppercase text-white/40">MAR</span>
+                    <span class="text-[10px] uppercase text-white/40">MIÉ</span>
+                    <span class="text-[10px] uppercase text-white/40">JUE</span>
+                    <span class="text-[10px] uppercase text-white/40">VIE</span>
+                    <span class="text-[10px] uppercase text-white/40">SÁB</span>
+                    <span class="text-[10px] uppercase text-white/40">DOM</span>
+                </div>
+                <div class="grid grid-cols-7 auto-rows-[110px]" id="calendarGrid">
+                    <!-- El calendario se generará dinámicamente con JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR MISIONES DEL MES ACTUAL -->
+        <div class="lg:col-span-4 space-y-6">
+            <div class="bg-surface-light p-6 border border-outline/30">
+                <h3 class="font-headline text-xl font-bold uppercase mb-6 flex items-center gap-2"><span
+                        class="w-1 h-6 bg-primary"></span>ACTIVIDADES DEL MES</h3>
+                <div class="space-y-4" id="actividadesMes">
+                    <!-- Se llenará dinámicamente con las actividades del mes actual -->
+                </div>
+            </div>
+            <div class="bg-primary p-6 text-center">
+                <span class="material-symbols-outlined text-4xl text-surface">military_tech</span>
+                <h3 class="font-headline font-black text-surface text-xl uppercase mt-2">RECLUTAMIENTO ABIERTO</h3>
+                <a href="reclutamiento.html"
+                    class="block mt-4 bg-surface text-primary py-3 text-xs font-black uppercase tracking-widest hover:brightness-110 transition">ALISTARSE
+                    AHORA</a>
+            </div>
+        </div>
+
+        <!-- SISTEMA PAP -->
+        <div class="lg:col-span-12 mt-8 bg-surface-light/50 p-8 border border-outline/30">
+            <div class="flex flex-col md:flex-row justify-between mb-8">
+                <h2 class="font-headline text-2xl font-black uppercase">SISTEMA DE PROGRESIÓN <span
+                        class="text-primary">(PAP)</span></h2>
+                <span class="text-[10px] text-primary">PRÓXIMA EVALUACIÓN: 13 DICIEMBRE 2026</span>
+            </div>
+            <div class="flex flex-wrap justify-between gap-4">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-2"><span
+                            class="material-symbols-outlined text-surface">person</span></div><span
+                        class="text-sm font-bold">ASPIRANTE</span>
+                </div>
+
+                <div class="text-center">
+                    <div
+                        class="w-14 h-14 border-2 border-primary rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="material-symbols-outlined text-primary">military_tech</span>
+                    </div><span class="text-sm font-bold text-primary">ALFEREZ</span><span
+                        class="block text-[9px] text-primary">EN EVALUACIÓN</span>
+                </div>
+                <div class="text-center opacity-40">
+                    <div
+                        class="w-12 h-12 border border-outline rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="material-symbols-outlined">star</span>
+                    </div><span class="text-sm">SUB-OFICIAL</span>
+                </div>
+                <div class="text-center opacity-40">
+                    <div
+                        class="w-12 h-12 border border-outline rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span class="material-symbols-outlined">workspace_premium</span>
+                    </div><span class="text-sm">OFICIAL</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="border-t border-outline/30 py-8 bg-surface/80 px-6 flex flex-col md:flex-row justify-between items-center mt-12">
+        <div class="text-lg font-bold text-primary font-headline">SHIELT MILSIM CARTAGENA</div>
+        <div class="flex gap-8 my-4 md:my-0">
+            <span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">Si avanzo sígueme...</span>
+            <span class="text-[10px] tracking-[0.2em] uppercase text-outline/60">¡Au au au!</span>
+        </div>
+        <div class="text-[10px] text-primary/40">S.H.I.E.L.T. // 2026</div>
+    </footer>
+
+    <script>
+        const festivosColombia = [
+            "2026-01-01", "2026-01-12", "2026-03-23", "2026-03-29", "2026-04-02", "2026-04-03",
+            "2026-05-01", "2026-05-11", "2026-06-01", "2026-06-08", "2026-06-15", "2026-06-29",
+            "2026-07-20", "2026-08-07", "2026-08-17", "2026-10-12", "2026-11-02", "2026-11-16",
+            "2026-12-08", "2026-12-25"
+        ];
+
+        const eventos = [
+            { fecha: "2026-03-26", titulo: "Entrenamiento Táctico", tipo: "entrenamiento", hora: "07:00 pm", descripcion: "Entrenamiento nocturno..." },
+            { fecha: "2026-03-29", titulo: "Enfrentamiento Táctico - Turbaco", tipo: "enfrentamiento", hora: "09:00 am", descripcion: "Enfrentamiento regional..." },
+
+            { fecha: "2026-04-16", titulo: "Entrenamiento Táctico", tipo: "entrenamiento", hora: "07:00 pm", descripcion: "Entrenamiento..." },
+            { fecha: "2026-04-19", titulo: "Enfrentamiento Táctico - Turbaco", tipo: "enfrentamiento", hora: "09:00 am", descripcion: "Segundo enfrentamiento..." },
+            { fecha: "2026-04-23", titulo: "Entrenamiento Táctico", tipo: "entrenamiento", hora: "07:00 pm", descripcion: "Entrenamiento de tiro..." },
+            { fecha: "2026-04-30", titulo: "Entrenamiento Táctico", tipo: "entrenamiento", hora: "07:00 pm", descripcion: "Entrenamiento final..." }
+        ];
+
+        let currentYear = 2026;
+        let currentMonth = 2;
+
+        function esFestivo(fecha) {
+            return festivosColombia.includes(fecha);
+        }
+
+        // 🔥 FIX APLICADO AQUÍ
+        function getEventosDelMes(year, month) {
+            return eventos.filter(evento => {
+                const fechaEvento = new Date(evento.fecha + "T00:00:00");
+                return fechaEvento.getFullYear() === year && fechaEvento.getMonth() === month;
+            });
+        }
+
+        function getEventoColor(tipo) {
+            switch (tipo) {
+                case 'entrenamiento': return 'bg-primary/20 border-l-2 border-primary';
+                case 'enfrentamiento': return 'bg-blue-500/20 border-l-2 border-blue-500';
+                default: return 'bg-amber-500/20 border-l-2 border-amber-500';
+            }
+        }
+
+        function getEventoColorTexto(tipo) {
+            switch (tipo) {
+                case 'entrenamiento': return 'text-primary';
+                case 'enfrentamiento': return 'text-blue-400';
+                default: return 'text-amber-400';
+            }
+        }
+
+        function getNombreMes(month) {
+            return ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'][month];
+        }
+
+        function getNombreDiaCompleto(dayIndex) {
+            return ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'][dayIndex];
+        }
+
+        function renderCalendar() {
+            const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+            let startOffset = firstDayOfMonth.getDay() === 0 ? 6 : firstDayOfMonth.getDay() - 1;
+
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const eventosDelMes = getEventosDelMes(currentYear, currentMonth);
+
+            const eventosPorDia = {};
+
+            // 🔥 FIX AQUÍ
+            eventosDelMes.forEach(evento => {
+                const dia = new Date(evento.fecha + "T00:00:00").getDate();
+                if (!eventosPorDia[dia]) eventosPorDia[dia] = [];
+                eventosPorDia[dia].push(evento);
+            });
+
+            const prevMonthLastDay = new Date(currentYear, currentMonth, 0).getDate();
+
+            let calendarHTML = '';
+            let dayCounter = 1;
+
+            for (let i = 0; i < 42; i++) {
+                let cellDay, isCurrentMonth, eventosDelDia = [], fechaCompleta = '';
+
+                if (i < startOffset) {
+                    cellDay = prevMonthLastDay - (startOffset - i - 1);
+                    isCurrentMonth = false;
+                } else if (dayCounter <= daysInMonth) {
+                    cellDay = dayCounter;
+                    isCurrentMonth = true;
+                    eventosDelDia = eventosPorDia[cellDay] || [];
+                    fechaCompleta = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(cellDay).padStart(2, '0')}`;
+                    dayCounter++;
+                } else {
+                    cellDay = i - (startOffset + daysInMonth) + 1;
+                    isCurrentMonth = false;
+                }
+
+                const cellDate = new Date(currentYear, currentMonth, cellDay);
+                const nombreDiaAbr = getNombreDiaCompleto(cellDate.getDay()).substring(0, 3).toUpperCase();
+                const isFestivoHoy = esFestivo(fechaCompleta);
+
+                let cellClasses = "border border-outline/10 p-2 min-h-[110px] flex flex-col";
+                if (!isCurrentMonth) cellClasses += " opacity-30";
+                if (isFestivoHoy && isCurrentMonth) cellClasses += " dia-festivo";
+
+                calendarHTML += `<div class="${cellClasses}">
+                <div class="flex justify-between">
+                    <span>${cellDay}</span>
+                    <span class="text-[8px]">${nombreDiaAbr}</span>
+                </div>`;
+
+                eventosDelDia.forEach(evento => {
+                    calendarHTML += `
+                    <div class="${getEventoColor(evento.tipo)} text-[9px] p-1 mt-1 rounded">
+                        <span class="${getEventoColorTexto(evento.tipo)}">${evento.titulo}</span>
+                        <span class="block text-[8px]">${evento.hora}</span>
+                    </div>`;
+                });
+
+                calendarHTML += `</div>`;
+            }
+
+            document.getElementById('calendarGrid').innerHTML = calendarHTML;
+            document.getElementById('currentMonthYear').innerHTML = `${getNombreMes(currentMonth)} ${currentYear}`;
+
+            renderActividadesDelMes();
+        }
+
+        function renderActividadesDelMes() {
+            const eventosDelMesActual = getEventosDelMes(currentYear, currentMonth);
+
+            const meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+            const diasSemana = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB'];
+
+            let actividadesHTML = '';
+
+            const eventosOrdenados = [...eventosDelMesActual]
+                // 🔥 FIX AQUÍ
+                .sort((a, b) => new Date(a.fecha + "T00:00:00") - new Date(b.fecha + "T00:00:00"));
+
+            eventosOrdenados.forEach(evento => {
+                // 🔥 FIX AQUÍ
+                const fecha = new Date(evento.fecha + "T00:00:00");
+
+                const dia = fecha.getDate();
+                const mes = meses[fecha.getMonth()];
+                const diaSemana = diasSemana[fecha.getDay()];
+
+                actividadesHTML += `
+                <div class="border-b pb-4">
+                    <div class="text-[10px]">${diaSemana} ${dia} ${mes}</div>
+                    <div class="font-bold text-sm">${evento.titulo}</div>
+                    <div class="text-xs text-white/60">${evento.hora}</div>
+                </div>`;
+            });
+
+            document.getElementById('actividadesMes').innerHTML = actividadesHTML;
+        }
+
+        document.getElementById('prevMonth').onclick = () => {
+            currentMonth--;
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            renderCalendar();
+        };
+
+        document.getElementById('nextMonth').onclick = () => {
+            currentMonth++;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            renderCalendar();
+        };
+
+        renderCalendar();
+    </script>
+
+
+</body>
+
+</html>
